@@ -10,7 +10,7 @@ set history=50		" 紀錄歷史指令的數量
 set ruler               " 顯示當前游標位置的底線
 set autoread            " 當外部更新時自動讀取
 "set nu			" 開啟顯示行數
-set bg=dark		" 黑色背景
+set bg=dark		" 設定黑色背景下的文字樣式
 " -----------------------------Coding Settings-------------------------------------
 
 syntax on		" 設定highlight
