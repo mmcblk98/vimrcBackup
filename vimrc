@@ -24,9 +24,10 @@ set smarttab		" 根據內文決定tab鍵的定位位址
 filetype on
 filetype indent on	" 開啟 filetype-specific indent
 filetype plugin on 	" 開啟 filetype-specific pligins
-
+set tags=tags;/
 " -----------------------------Map Keyboard"  Hotkey-------------------------------
 
-map <F12>:TlistToggle<CR>	" 將鍵盤F12設定為快速切換Taglist菜單
+
+map <f12> :Tlist<CR>	" 將鍵盤F12設定為快速切換Taglist菜單
 
 
