@@ -18,16 +18,20 @@ set hlsearch		" 搜尋字高亮度
 set cursorline
 
 set smarttab		" 根據內文決定tab鍵的定位位址
-
+set tags=tags;		" 
 
 " -----------------------------Plugin Settings-------------------------------------
 filetype on
 filetype indent on	" 開啟 filetype-specific indent
 filetype plugin on 	" 開啟 filetype-specific pligins
-set tags=tags;/
-" -----------------------------Map Keyboard"  Hotkey-------------------------------
 
-
-map <f12> :Tlist<CR>	" 將鍵盤F12設定為快速切換Taglist菜單
-
+" -----------------------------HotKey Setting--------------------------------------
+map <silent> <F12> :Tlist<CR>	" 將鍵盤F12設定為快速切換Taglist菜單
+nnoremap <silent> <F9> :NERDTreeToggle<CR>	" 切換NERD 目錄
+" ============================================================================================"
+" -- map 說明
+"     map j GG 		" 會使得j 映射成GG
+"     map Q j		" 會將Q映射到GG，因為Q 映射到j，j映射到GG
+"     nnoremap W 	" W映射到j，但不會映射到GG
+"     <silent>		" 使指令執行時不會出現執行名稱在vim左下方
 
