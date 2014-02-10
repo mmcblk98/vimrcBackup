@@ -6,7 +6,7 @@
 
 set nocompatible		" 
 set bs=2				" 
-set mouse=a				" 設定滑鼠在all mode (a) 都可使用
+set mouse=nv			" 設定滑鼠在all mode (a) 都可使用
 " -----------------------------Tab Setting------------------------------------------
 
 set tabstop=4			" 設定<Tab>鍵的定位位址
@@ -25,8 +25,10 @@ set bg=dark				" 設定黑色背景下的文字樣式
 " -----------------------------Coding Settings-------------------------------------
 syntax on				" 設定highlight
 set hlsearch			" 搜尋字高亮度
-set cursorline			" 	
-
+set cursorline			" 當前游標底線
+set foldmethod=indent	" 設定摺疊模式
+set foldnestmax=1		" 最高摺疊幾層
+set foldlevel=1			" 
 " -----------------------------Plugin Settings-------------------------------------
 filetype on
 filetype indent on		" 開啟 filetype-specific indent
@@ -35,6 +37,7 @@ filetype plugin on 		" 開啟 filetype-specific pligins
 " -----------------------------HotKey Setting--------------------------------------
 map <silent> <F12> :Tlist<CR>				" 將鍵盤F12設定為快速切換Taglist菜單
 nnoremap <silent> <F9> :NERDTreeToggle<CR>	" 切換NERD 目錄
+nnoremap <silent> <F2> :
 " ============================================================================================"
 " -- map 說明
 "     map j GG 		" 會使得j 映射成GG
