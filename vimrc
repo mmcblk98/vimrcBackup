@@ -13,7 +13,8 @@ set tabstop=4			" 設定<Tab>鍵的定位位址
 set softtabstop=4		" 
 set shiftwidth=4		"
 set smarttab			" 根據內文決定tab鍵的定位位址
-set tags=tags;			" 
+set tags=~/.vim/stdtags,tags,.tags,../tags;		" 
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 set history=50			" 紀錄歷史指令的數量
 set ruler               " 顯示當前游標位置的底線
@@ -29,6 +30,8 @@ set cursorline			" 當前游標底線
 set foldmethod=indent	" 設定摺疊模式
 set foldnestmax=1		" 最高摺疊幾層
 set foldlevel=1			" 
+"設置OmniCppComplete(暫時)
+set nocp
 " -----------------------------Plugin Settings-------------------------------------
 filetype on
 filetype indent on		" 開啟 filetype-specific indent
@@ -38,6 +41,7 @@ filetype plugin on 		" 開啟 filetype-specific pligins
 map <silent> <F12> :Tlist<CR>				" 將鍵盤F12設定為快速切換Taglist菜單
 nnoremap <silent> <F9> :NERDTreeToggle<CR>	" 切換NERD 目錄
 nnoremap <silent> <F2> :
+map <C-L> :!ctags -R -c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 " ============================================================================================"
 " -- map 說明
 "     map j GG 		" 會使得j 映射成GG
