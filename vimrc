@@ -9,6 +9,7 @@ set bs=2				"
 set mouse=nv			" 設定滑鼠在all mode (a) 都可使用
 " -----------------------------Tab Setting------------------------------------------
 
+set expandtab
 set tabstop=4			" 設定<Tab>鍵的定位位址
 set softtabstop=4		" 
 set shiftwidth=4		"
@@ -28,8 +29,8 @@ syntax on				" 設定highlight
 set hlsearch			" 搜尋字高亮度
 set cursorline			" 當前游標底線
 set foldmethod=indent	" 設定摺疊模式
-set foldnestmax=1		" 最高摺疊幾層
-set foldlevel=1			" 
+set foldnestmax=5		" 最高摺疊幾層
+set foldlevel=5			" 
 "設置OmniCppComplete(暫時)
 set nocp
 " -----------------------------Plugin Settings-------------------------------------
@@ -37,11 +38,17 @@ filetype on
 filetype indent on		" 開啟 filetype-specific indent
 filetype plugin on 		" 開啟 filetype-specific pligins
 
+" -----------------------------Plugin Settings-------------------------------------
+set fileencodings=utf8,big5,gbk,latin1
+set fileencoding=big5
+
 " -----------------------------HotKey Setting--------------------------------------
 map <silent> <F12> :Tlist<CR>				" 將鍵盤F12設定為快速切換Taglist菜單
 nnoremap <silent> <F9> :NERDTreeToggle<CR>	" 切換NERD 目錄
-nnoremap <silent> <F2> :
+set pastetoggle=<F10>	            	    " 切換是否為剪貼模式
 map <C-L> :!ctags -R -c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
+"map <C-u> :set fileencoding=utf8
+"map <C-b> :set fileencoding=big5
 " ============================================================================================"
 " -- map 說明
 "     map j GG 		" 會使得j 映射成GG
