@@ -1,0 +1,11 @@
+A1. 打字不能使用鍵盤右邊的數字鍵
+    Terminal -> Features -> Disable application keypad mode
+A2. 如何讓Pietty顯示中文
+    工具列->選項->字形 
+    選細明體 字集選CHINESE_BIG5
+    選項->字元編碼->Unicode
+A3. F1~F5 無法傳送
+    在設定中, Terminal -> Keyboard裡
+    The Function keys and keypad 設定成 Xterm R6 或是 VT100+ 即可。
+
+Reference: http://ccd9527.blogspot.tw/2009/01/pietty-and-putty.html
