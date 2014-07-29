@@ -8,8 +8,8 @@ execute pathogen#infect()
 filetype off
 " -----------------------------General Settings-------------------------------------
 set encoding=utf-8
-set langmenu=zh_CN.UTF-8
-language message zh_CN.UTF-8
+set langmenu=zh_TW.UTF-8
+language message zh_TW.UTF-8
 set nocompatible		" 
 set bs=2				" 
 set mouse=nv			" 設定滑鼠在all mode (a) 都可使用
