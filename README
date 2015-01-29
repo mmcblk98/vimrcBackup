@@ -1,1 +1,23 @@
 This is my vim Setting
+
+
+YCM
+1. Install python2.6
+   sudo add-apt-repository ppa:fkrull/deadsnakes
+   sudo apt-get update
+   sudo apt-get install python2.6 python2.6-dev
+
+   if still can not work, execute the following instructions:
+   pythonbrew install 2.6
+   pythonbrew switch 2.6
+
+   http://askubuntu.com/questions/125342/how-can-i-install-python-2-6-on-12-04
+
+2. Intsall YouCompleteMe
+   http://www.html-js.com/article/1750
+
+3. Intsall vim 7.4
+   sudo add-apt-repository ppa:fcwu-tw/ppa
+   sudo apt-get update
+   sudo apt-get install vim
+   http://linuxg.net/how-to-install-vim-7-4-on-ubuntu-13-10-13-04-12-04-linux-mint-16-15-13-and-debian-sid/

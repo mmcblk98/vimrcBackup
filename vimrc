@@ -1,11 +1,78 @@
 " ============================================================================================"
 " Joseph98 Vim Backup
 
-" ------------------------------- Initialize ---------------------------------------
+" ------------------------------- Initialize Vundle---------------------------------------
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-set nocp
-execute pathogen#infect()
-filetype off
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+" All of your Plugins must be added before the following line
+Bundle 'naseer/logcat'
+Bundle 'wesleyche/SrcExpl'
+Bundle 'wesleyche/Trinity'
+"Bundle 'Rip-Rip/clang_complete'
+"NeoComplcache
+"Bundle 'Shougo/neocomplcache.vim'
+"Bundle 'Shougo/neosnippet'
+"Bundle 'Shougo/neosnippet-snippets'
+
+"VIM Git Plugin
+Bundle 'tpope/vim-fugitive'
+
+"YouCompleteMe
+Bundle 'Valloric/YouCompleteMe'
+
+" vim-gitgutter: show where the file you modified
+Bundle 'airblade/vim-gitgutter'
+
+" Syntastic
+Bundle 'scrooloose/syntastic'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" -------------------------syntastic--------------------------------
+let g:syntastic_check_on_open = 0 
+let g:syntastic_c_check_header = 1
+let g:syntastic_c_auto_refresh_includes = 1
+let g:syntastic_cpp_compiler = 'gcc'
+let g:syntastic_cpp_no_include_search = 1
+" -----------------------------YCM-----------------------------------
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar' : 1,
+      \ 'qf' : 1,
+      \ 'notes' : 1,
+      \ 'markdown' : 1,
+      \ 'unite' : 1,
+      \ 'text' : 1,
+      \ 'vimwiki' : 1,
+      \ 'gitcommit' : 1,
+      \}
+let g:ycm_semantic_triggers =  {
+  \   'c' : ['->', '.'],
+  \   'objc' : ['->', '.'],
+  \   'ocaml' : ['.', '#'],
+  \   'cpp,objcpp' : ['->', '.', '::'],
+  \   'perl' : ['->'],
+  \   'php' : ['->', '::'],
+  \   'cs,java,javascript,d,vim,python,perl6,scala,vb,elixir,go' : ['.'],
+  \   'ruby' : ['.', '::'],
+  \   'lua' : ['.', ':'],
+  \   'erlang' : [':'],
+  \ }
+
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_echo_current_diagnostic = 0
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+" -----------------------------CSCOPE Setting ------------------------------------
+
 " -----------------------------General Settings-------------------------------------
 set encoding=utf-8
 set langmenu=zh_TW.UTF-8
@@ -47,12 +114,28 @@ filetype plugin on 		" 開啟 filetype-specific pligins
 " -----------------------------Plugin Settings-------------------------------------
 set fileencodings=utf8,big5,gbk,latin1
 set fileencoding=big5
+let g:NERDTreeDirArrows=1
 
 " -----------------------------HotKey Setting--------------------------------------
-map <silent> <F12> :Tlist<CR>				" 將鍵盤F12設定為快速切換Taglist菜單
-nnoremap <silent> <F9> :NERDTreeToggle<CR>	" 切換NERD 目錄
+"map <silent> <F12> :Tlist<CR>				" 將鍵盤F12設定為快速切換Taglist菜單
+"nnoremap <silent> <F9> :NERDTreeToggle<CR>	" 切換NERD 目錄
 set pastetoggle=<F10>	            	    " 切換是否為剪貼模式
-map <C-L> :!ctags -R -c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
+map <C-L> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
+map <F9>  :GitGutterToggle<CR>
+" -----------------------------Trinity---------------------------------------------
+" Open and close all the three plugins on the same time 
+nmap <F8>  :TrinityToggleAll<CR> 
+
+" Open and close the Source Explorer separately 
+nmap <F5>  :TrinityToggleSourceExplorer<CR> 
+
+" Open and close the Taglist separately 
+nmap <F6> :TrinityToggleTagList<CR> 
+
+" Open and close the NERD Tree separately 
+nmap <F7> :TrinityToggleNERDTree<CR>
+
+
 "map <C-u> :set fileencoding=utf8
 "map <C-b> :set fileencoding=big5
 " ============================================================================================"
